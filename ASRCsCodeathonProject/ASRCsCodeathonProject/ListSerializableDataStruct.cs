@@ -102,22 +102,18 @@ namespace ASRCsCodeathonProject
         double den_alt = getAvgDA();
     }
 
-        // Calculate average wind speed
-        public double getAvgWS()
+    // Calculate average wind speed
+    public double getAvgWS()
+    {
+        double avgWs = 0;
+
+        for (int i = 0; i < sds_list.Count; i++)
         {
-            double avgWs = 0;
-
-            for (int i = 0; i < sds_list.Count; i++)
-            {
-                avgWs += sds_list[i].wind_speed;
-            }
-
-            return (avgWs / sds_list.Count);
+            avgWs += sds_list[i].wind_speed;
         }
 
-   
-    
-
+        return (avgWs / sds_list.Count);
+    }
 
     // Calculate average cross wind
     public double getAvgCW()
@@ -271,5 +267,5 @@ namespace ASRCsCodeathonProject
         }
         return "Data Set:" + dataset;
     }
-}
+  }
 }
