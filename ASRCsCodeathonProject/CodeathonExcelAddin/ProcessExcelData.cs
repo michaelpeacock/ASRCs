@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
+using ASRCsCodeathonProject;
 
 
 namespace CodeathonExcelAddin
@@ -19,10 +20,10 @@ namespace CodeathonExcelAddin
             int maxColumn = used_range.Columns.Count;
 
             List<string> config = new List<string>();
- 
+
             for (int row = 1; row <= maxRow; row++)
             {
-                if(row == 1)
+                if (row == 1)
                 {
                     for (int column = 1; column <= maxColumn; column++)
                     {
@@ -37,83 +38,83 @@ namespace CodeathonExcelAddin
                     {
                         object value = used_range[row, column].Value2;
 
-                        if(config[column] == "FORMATTED DATE-TIME")
+                        if (config[column] == "FORMATTED DATE-TIME")
                         {
                             String dateTime = (String)value;
                             newRecord.date = dateTime.Split(' ')[0];
                             newRecord.time = dateTime.Split(' ')[1];
                         }
-                        else if(config[column] == "DT")
+                        else if (config[column] == "DT")
                         {
                             int timeInSecs = (int)value;
                             newRecord.time_seconds = timeInSecs;
                         }
-                        else if(config[column] == "MG")
+                        else if (config[column] == "MG")
                         {
                             string mg = (string)value;
                             newRecord.mag_dir = mg;
                         }
-                        else if(config[column] == "TR")
+                        else if (config[column] == "TR")
                         {
                             string mg = (string)value;
                             newRecord.true_dir = mg;
                         }
-                        else if(config[column] == "WS")
+                        else if (config[column] == "WS")
                         {
                             double ws = (double)value;
                             newRecord.wind_speed = ws;
                         }
-                        else if(config[column] == "CW")
+                        else if (config[column] == "CW")
                         {
                             double cw = (double)value;
                             newRecord.cross_wind = cw;
                         }
-                        else if(config[column] == "HW")
+                        else if (config[column] == "HW")
                         {
                             double hw = (double)value;
                             newRecord.head_wind = hw;
                         }
-                        else if(config[column] == "TP")
+                        else if (config[column] == "TP")
                         {
                             double tp = (double)value;
                             newRecord.temp = tp;
                         }
-                        else if(config[column] == "WC")
+                        else if (config[column] == "WC")
                         {
                             double wc = (double)value;
                             newRecord.wind_chill = wc;
                         }
-                        else if(config[column] == "RH")
+                        else if (config[column] == "RH")
                         {
                             double rh = (double)value;
                             newRecord.rel_hum = rh;
                         }
-                        else if(config[column] == "HI")
+                        else if (config[column] == "HI")
                         {
                             double hi = (double)value;
                             newRecord.heat_index = hi;
                         }
-                        else if(config[column] == "DP")
+                        else if (config[column] == "DP")
                         {
                             double dp = (double)value;
                             newRecord.dew_point = dp;
                         }
-                        else if(config[column] == "WB")
+                        else if (config[column] == "WB")
                         {
                             double wb = (double)value;
                             newRecord.wet_bulb = wb;
                         }
-                        else if(config[column] == "BP")
+                        else if (config[column] == "BP")
                         {
                             double bp = (double)value;
                             newRecord.bar = bp;
                         }
-                        else if(config[column] == "AL")
+                        else if (config[column] == "AL")
                         {
                             double al = (double)value;
                             newRecord.alt = al;
                         }
-                        else if(config[column] == "DA")
+                        else if (config[column] == "DA")
                         {
                             double da = (double)value;
                             newRecord.den_alt = da;
@@ -124,6 +125,7 @@ namespace CodeathonExcelAddin
             }
             return DataSet;
         }
+    }
 
         
 }
