@@ -50,26 +50,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\BluetoothSupport\BluetoothManager.cs" />
-    <Compile Include="Features\SerialPortSupport\SerialPortReader.cs" />
-    <Compile Include="Features\WindowHandler\Interfaces\WindowApplication_I.cs" />
-    <Compile Include="Features\WindowHandler\WinAppImpl\WinAppKestrelTracker.cs" />
-    <Compile Include="Features\WindowHandler\WinAppImpl\WinApp_A.cs" />
-    <Compile Include="Features\WindowHandler\WindowHandler.cs" />
-    <Compile Include="Features\WindowHandler\WindowHandlerManager.cs" />
-    <Compile Include="Features\WindowHandler\WindowStringProcessor.cs" />
-    <Compile Include="ListSerializableDataStruct.cs" />
-    <Compile Include="SerializableDataStruct.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="BluetoothManager.cs" />
+    <Compile Include="SerialPortReader.cs" />
+    <Compile Include="WindowApplication_I.cs" />
+    <Compile Include="WinAppKestrelTracker.cs" />
+    <Compile Include="WinApp_A.cs" />
+    <Compile Include="KestrelLiveDataReader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="KestrelLiveDataReader.Designer.cs">
+      <DependentUpon>KestrelLiveDataReader.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListSerializableDataStruct.cs" />
+    <Compile Include="SerializableDataStruct.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="WindowHandler.cs" />
+    <Compile Include="WindowHandlerManager.cs" />
+    <Compile Include="WindowStringProcessor.cs" />
+    <EmbeddedResource Include="KestrelLiveDataReader.resx">
+      <DependentUpon>KestrelLiveDataReader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

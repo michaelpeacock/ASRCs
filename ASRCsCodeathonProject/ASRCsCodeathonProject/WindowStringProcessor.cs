@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace ASRCsCodeathonProject.Features.WindowHandler
+namespace ASRCsCodeathonProject
 {
     class WindowStringProcessor
     {

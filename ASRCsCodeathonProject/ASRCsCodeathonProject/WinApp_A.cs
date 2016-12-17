@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ASRCsCodeathonProject.Features.WindowHandler.WinAppImpl
+namespace ASRCsCodeathonProject
 {
     abstract class WinApp_A
     {

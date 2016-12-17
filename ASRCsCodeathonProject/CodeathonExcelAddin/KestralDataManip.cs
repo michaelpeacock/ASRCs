@@ -35,7 +35,6 @@ namespace CodeathonExcelAddin
         private void readData_Click(object sender, EventArgs e)
         {
             list = ProcessExcelData.getDataSet(sheet.UsedRange, workbook);
-            label1.Text = "temp: " + list.getAvgWS();
         }
 
         private void serializeData_Click(object sender, EventArgs e)
@@ -106,8 +105,6 @@ namespace CodeathonExcelAddin
                     list = (ListSerializableDataStruct)bformatter.Deserialize(stream);
                     stream.Close();
 
-                    label1.Text = "" + list.getCount();
-
                 }
                 catch (Exception exp)
                 {
@@ -123,6 +120,12 @@ namespace CodeathonExcelAddin
             {
                 return;
             }
+            label1.Text = ""+list.getCount();
+        }
+
+        private void mergeDataSets_Click(object sender, EventArgs e)
+        {
+            list.addList(ProcessExcelData.getDataSet(sheet.UsedRange, workbook));
         }
     }
 }

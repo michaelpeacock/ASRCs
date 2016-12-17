@@ -6,7 +6,7 @@ using System.Collections.Generic;
  * Was able to pair/connect to the Kestrel device via another application
  * Was unable to 
  */
-namespace ASRCsCodeathonProject.Features.BluetoothSupport
+namespace ASRCsCodeathonProject
 {
     class BluetoothManager
     {

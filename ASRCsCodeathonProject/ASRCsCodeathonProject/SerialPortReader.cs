@@ -11,7 +11,7 @@ using System.Windows.Forms;
  * unfortunately this isn't useful for interpretting data when only byte data is given..
  * 
  */
-namespace ASRCsCodeathonProject.Features.SerialPortSupport
+namespace ASRCsCodeathonProject
 {
     class SerialPortReader
     {
