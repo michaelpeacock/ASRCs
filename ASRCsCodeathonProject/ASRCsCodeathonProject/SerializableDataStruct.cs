@@ -14,9 +14,8 @@ namespace ASRCsCodeathonProject
     [Serializable()]
     public class SerializableDataStruct : ISerializable
     {
-        public string date;
-        public string time;
-        public int time_seconds;
+        public DateTime date_time;
+        public double time_seconds;
         public string mag_dir;
         public string true_dir;
         public double wind_speed;
@@ -34,15 +33,12 @@ namespace ASRCsCodeathonProject
 
         
 
-        public SerializableDataStruct(string in_date, string in_time, int in_time_seconds, string in_mag_dir, string in_true_dir, double in_wind_speed, 
+        public SerializableDataStruct(DateTime in_date_time, int in_time_seconds, string in_mag_dir, string in_true_dir, double in_wind_speed, 
                                 double in_cross_wind, double in_head_wind, double in_temp, double in_wind_chill, double in_rel_hum, 
                                 double in_heat_index, double in_dew_point, double in_wet_bulb, double in_bar, double in_alt, double in_den_alt)
         {
-
-            date = in_date;
-
-            time = in_time;
-
+            date_time = in_date_time;
+            
             if (in_mag_dir != null)      
                 mag_dir = in_mag_dir;      
             else      
@@ -97,8 +93,7 @@ namespace ASRCsCodeathonProject
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             // Use the AddValue method to specify serialized values.
-            info.AddValue("date", date);
-            info.AddValue("time", time);
+            info.AddValue("date_time", date_time);
             info.AddValue("mag_dir", mag_dir);
             info.AddValue("true_dir", true_dir);
             info.AddValue("wind_speed", wind_speed);
@@ -126,7 +121,7 @@ namespace ASRCsCodeathonProject
         {
             //string value = date + " " + time;
 
-            return "Date: " + this.date + ", Time: " + this.time + ", Magnetic Direction: " + this.mag_dir + ", True Direction: " + this.true_dir 
+            return "Date Time: " + this.date_time + ", Magnetic Direction: " + this.mag_dir + ", True Direction: " + this.true_dir 
                     + ", Wind Speed: " + this.wind_speed + ", Cross Wind: " + this.cross_wind + ", Head Wind: " + this.head_wind + ", Temperature: "
                     + ", Wind Chill: " + this.wind_chill + ", Relative Humidity: " + this.rel_hum + ", Heat Index: " + this.heat_index + ", Dew Point: "
                     + ", Wet Bulb: " + this.wet_bulb + ", Barometric Pressure: " + this.bar + ", Altitude: " + this.alt + ", Density Altitude: " + this.den_alt;
