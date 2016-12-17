@@ -9,29 +9,30 @@ using System.Globalization;
 using System.Collections;
 
 [Serializable()]
-class SerializableDataStruct : ISerializable
+public class SerializableDataStruct : ISerializable
 {
-    string date;
-    string time;
-    string mag_dir;
-    string true_dir;
-    double wind_speed;
-    double cross_wind;
-    double head_wind;
-    double temp;
-    double wind_chill;
-    double rel_hum;
-    double heat_index;
-    double dew_point;
-    double wet_bulb;
-    double bar;
-    double alt;
-    double den_alt;
+    public string date;
+    public string time;
+    public int time_seconds;
+    public string mag_dir;
+    public string true_dir;
+    public double wind_speed;
+    public double cross_wind;
+    public double head_wind;
+    public double temp;
+    public double wind_chill;
+    public double rel_hum;
+    public double heat_index;
+    public double dew_point;
+    public double wet_bulb;
+    public double bar;
+    public double alt;
+    public double den_alt;
 
     DateTime parsedDate;
     DateTime parsedTime;
 
-    public SerializableDataStruct(string in_date, string in_time, string in_mag_dir, string in_true_dir, double in_wind_speed, 
+    public SerializableDataStruct(string in_date, string in_time, int in_time_seconds, string in_mag_dir, string in_true_dir, double in_wind_speed, 
                             double in_cross_wind, double in_head_wind, double in_temp, double in_wind_chill, double in_rel_hum, 
                             double in_heat_index, double in_dew_point, double in_wet_bulb, double in_bar, double in_alt, double in_den_alt)
     {
@@ -52,6 +53,7 @@ class SerializableDataStruct : ISerializable
         else      
             mag_dir = "NULL";
 
+        time_seconds = in_time_seconds;
 
         if (in_true_dir != null)
             true_dir = in_true_dir;
@@ -82,6 +84,9 @@ class SerializableDataStruct : ISerializable
 
         den_alt = in_den_alt;
     }
+
+    public SerializableDataStruct() { }
+
 
     // The value to serialize.
     private string myProperty_value;
