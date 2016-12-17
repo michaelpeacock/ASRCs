@@ -1,2 +1,5 @@
 # Ignore files/dirs
+
+.vs/
+bin/
 obj/

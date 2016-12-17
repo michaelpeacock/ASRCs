@@ -48,7 +48,7 @@ class ListSerializableDataStruct : ISerializable
         return count;
     }
 
-    // Get current index in the list
+    // Get the current SerializableDataStruct in the list
     public ASRCsCodeathonProject.SerializableDataStruct getCurrentIndexSds(int index)
     {
         return sds_list[index];
@@ -60,6 +60,7 @@ class ListSerializableDataStruct : ISerializable
         sds_list.Add(in_sds);
     }
 
+    // Add a new list to the current list, ignoring duplicate entries
     public void addList(ListSerializableDataStruct in_lsds)
     {
         ListSerializableDataStruct temp = in_lsds;
@@ -74,7 +75,26 @@ class ListSerializableDataStruct : ISerializable
                }
             }
         }
-        // For each add, remove duplicates as you go
+    }
+
+    // Calculate the averages of each category
+    public void getAverages()
+    {
+        // Call each average function...
+        double wind_speed = getAvgWS();
+    }
+
+    // Calculate average wind speed
+    public double getAvgWS()
+    {
+        double avgWs = 0;
+
+        for (int i = 0; i < sds_list.Count; i++)
+        {
+            avgWs += sds_list[i].wind_speed;
+        }
+
+        return (avgWs / sds_list.Count);
     }
 
     public override string ToString()
