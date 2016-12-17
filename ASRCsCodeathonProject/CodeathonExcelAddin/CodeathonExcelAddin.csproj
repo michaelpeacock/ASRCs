@@ -169,6 +169,7 @@
     <Compile Include="KestrelDataAddInRibbon.Designer.cs">
       <DependentUpon>KestrelDataAddInRibbon.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintToExcelSheets.cs" />
     <Compile Include="ProcessExcelData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

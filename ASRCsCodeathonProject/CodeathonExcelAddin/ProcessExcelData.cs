@@ -30,6 +30,7 @@ namespace CodeathonExcelAddin
                         config.Add((string)used_range[row, column].Value2);
                     }
                     row++;
+                    DataSet.setTypeList(config);
                 }
                 else
                 {

@@ -15,6 +15,7 @@ namespace ASRCsCodeathonProject
     {
         public ASRCsCodeathonProject.SerializableDataStruct sds;
         public List<ASRCsCodeathonProject.SerializableDataStruct> sds_list;
+        public List<string> dataTypes;
 
         public ListSerializableDataStruct()
         {
@@ -25,6 +26,7 @@ namespace ASRCsCodeathonProject
         public ListSerializableDataStruct(SerializationInfo info, StreamingContext context)
         {
             sds_list = (List<SerializableDataStruct>)info.GetValue("sds_list", typeof(List<SerializableDataStruct>));
+            //dataTypes = (List<string>)info.GetValue("dataTypes", typeof(List<string>));
         }
 
         // Implement this method to serialize data. The method is called 
@@ -33,6 +35,7 @@ namespace ASRCsCodeathonProject
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("sds_list", sds_list);
+            info.AddValue("dataTypes", dataTypes);
         }
 
 
@@ -67,6 +70,11 @@ namespace ASRCsCodeathonProject
         public SerializableDataStruct getSDS(int index)
         {
             return sds_list[index];
+        }
+
+        public void setTypeList(List<string> in_typesList)
+        {
+            dataTypes = in_typesList;
         }
     
 

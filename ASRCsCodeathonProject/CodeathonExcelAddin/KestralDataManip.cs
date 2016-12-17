@@ -22,7 +22,8 @@ namespace CodeathonExcelAddin
         Excel.Workbook workbook;
         KestrelDataAddInRibbon excelRibbon;
         List<SerializableDataStruct> dataset;
-        ListSerializableDataStruct list;
+        ListSerializableDataStruct list, tempLoadList;
+        int sheetNumber = 1;
 
         public KestralDataManip(Excel.Worksheet sheet, Excel.Workbook workbook, KestrelDataAddInRibbon ribbon)
         {
@@ -82,6 +83,11 @@ namespace CodeathonExcelAddin
 
         private void loadSerializedData_Click(object sender, EventArgs e)
         {
+            loadinList(false);
+        }
+
+        private void loadinList(bool alreadyLoadedOne)
+        {
             OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
             FolderBrowserDialog folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             folderBrowserDialog.Description = "Select the directory that you want to use as the default.";
@@ -101,8 +107,12 @@ namespace CodeathonExcelAddin
 
                     Stream stream = File.Open(openFileName, FileMode.Open);
                     BinaryFormatter bformatter = new BinaryFormatter();
-
-                    list = (ListSerializableDataStruct)bformatter.Deserialize(stream);
+                    if (!alreadyLoadedOne)
+                    {
+                        list = (ListSerializableDataStruct)bformatter.Deserialize(stream);
+                    }
+                    else
+                        tempLoadList = (ListSerializableDataStruct)bformatter.Deserialize(stream);
                     stream.Close();
 
                 }
@@ -120,12 +130,22 @@ namespace CodeathonExcelAddin
             {
                 return;
             }
-            label1.Text = ""+list.getCount();
+            if (!alreadyLoadedOne)
+                PrintToExcelSheets.printDataSetToExcel(workbook, list, sheetNumber++);
         }
 
         private void mergeDataSets_Click(object sender, EventArgs e)
         {
             list.addList(ProcessExcelData.getDataSet(sheet.UsedRange, workbook));
+            PrintToExcelSheets.printDataSetToExcel(workbook, list, sheetNumber++);
+        }
+
+        private void mergeAnotherLoadedSet_Click(object sender, EventArgs e)
+        {
+            loadinList(true);
+            list.addList(tempLoadList);
+            tempLoadList = null;
+            PrintToExcelSheets.printDataSetToExcel(workbook, list, sheetNumber++);
         }
     }
 }

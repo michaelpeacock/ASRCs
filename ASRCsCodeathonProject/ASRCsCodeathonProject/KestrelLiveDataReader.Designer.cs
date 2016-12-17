@@ -30,7 +30,6 @@
         {
             this.addLiveDataToList = new System.Windows.Forms.Button();
             this.serializeData = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // addLiveDataToList
@@ -45,7 +44,7 @@
             // 
             // serializeData
             // 
-            this.serializeData.Location = new System.Drawing.Point(24, 240);
+            this.serializeData.Location = new System.Drawing.Point(24, 97);
             this.serializeData.Name = "serializeData";
             this.serializeData.Size = new System.Drawing.Size(193, 45);
             this.serializeData.TabIndex = 1;
@@ -53,27 +52,16 @@
             this.serializeData.UseVisualStyleBackColor = true;
             this.serializeData.Click += new System.EventHandler(this.serializeData_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
-            // 
             // KestrelLiveDataReader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(241, 318);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(241, 172);
             this.Controls.Add(this.serializeData);
             this.Controls.Add(this.addLiveDataToList);
             this.Name = "KestrelLiveDataReader";
             this.Text = "KestrelLiveDataReader";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -81,6 +69,5 @@
 
         private System.Windows.Forms.Button addLiveDataToList;
         private System.Windows.Forms.Button serializeData;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -31,11 +31,8 @@
             this.readData = new System.Windows.Forms.Button();
             this.serializeData = new System.Windows.Forms.Button();
             this.loadSerializedData = new System.Windows.Forms.Button();
-            this.calcAverges = new System.Windows.Forms.Button();
-            this.createGrpahs = new System.Windows.Forms.Button();
-            this.compareDataSets = new System.Windows.Forms.Button();
             this.mergeDataSets = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // readData
@@ -68,71 +65,38 @@
             this.loadSerializedData.UseVisualStyleBackColor = true;
             this.loadSerializedData.Click += new System.EventHandler(this.loadSerializedData_Click);
             // 
-            // calcAverges
-            // 
-            this.calcAverges.Enabled = false;
-            this.calcAverges.Location = new System.Drawing.Point(20, 147);
-            this.calcAverges.Name = "calcAverges";
-            this.calcAverges.Size = new System.Drawing.Size(179, 35);
-            this.calcAverges.TabIndex = 4;
-            this.calcAverges.Text = "Calulate Averages";
-            this.calcAverges.UseVisualStyleBackColor = true;
-            // 
-            // createGrpahs
-            // 
-            this.createGrpahs.Enabled = false;
-            this.createGrpahs.Location = new System.Drawing.Point(20, 187);
-            this.createGrpahs.Name = "createGrpahs";
-            this.createGrpahs.Size = new System.Drawing.Size(179, 35);
-            this.createGrpahs.TabIndex = 5;
-            this.createGrpahs.Text = "Create Graphs";
-            this.createGrpahs.UseVisualStyleBackColor = true;
-            // 
-            // compareDataSets
-            // 
-            this.compareDataSets.Enabled = false;
-            this.compareDataSets.Location = new System.Drawing.Point(20, 230);
-            this.compareDataSets.Name = "compareDataSets";
-            this.compareDataSets.Size = new System.Drawing.Size(179, 35);
-            this.compareDataSets.TabIndex = 6;
-            this.compareDataSets.Text = "Compare Data Sets";
-            this.compareDataSets.UseVisualStyleBackColor = true;
-            // 
             // mergeDataSets
             // 
-            this.mergeDataSets.Location = new System.Drawing.Point(20, 271);
+            this.mergeDataSets.Location = new System.Drawing.Point(20, 147);
             this.mergeDataSets.Name = "mergeDataSets";
             this.mergeDataSets.Size = new System.Drawing.Size(179, 35);
             this.mergeDataSets.TabIndex = 7;
-            this.mergeDataSets.Text = "Merge Data Sets";
+            this.mergeDataSets.Text = "Merge Data Sets (loaded and sheet)";
             this.mergeDataSets.UseVisualStyleBackColor = true;
             this.mergeDataSets.Click += new System.EventHandler(this.mergeDataSets_Click);
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(75, 349);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "label1";
+            this.button1.Location = new System.Drawing.Point(20, 188);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 35);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Merge Data Sets (Load in)";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.mergeAnotherLoadedSet_Click);
             // 
             // KestralDataManip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.mergeDataSets);
-            this.Controls.Add(this.compareDataSets);
-            this.Controls.Add(this.createGrpahs);
-            this.Controls.Add(this.calcAverges);
             this.Controls.Add(this.loadSerializedData);
             this.Controls.Add(this.serializeData);
             this.Controls.Add(this.readData);
             this.Name = "KestralDataManip";
             this.Size = new System.Drawing.Size(223, 476);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -141,10 +105,7 @@
         private System.Windows.Forms.Button readData;
         private System.Windows.Forms.Button serializeData;
         private System.Windows.Forms.Button loadSerializedData;
-        private System.Windows.Forms.Button calcAverges;
-        private System.Windows.Forms.Button createGrpahs;
-        private System.Windows.Forms.Button compareDataSets;
         private System.Windows.Forms.Button mergeDataSets;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
