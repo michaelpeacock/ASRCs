@@ -11,8 +11,8 @@ using System.Collections;
 [Serializable()]
 class ListSerializableDataStruct : ISerializable
 {
-    public SerializableDataStruct sds;
-    public List<SerializableDataStruct> sds_list;
+    public ASRCsCodeathonProject.SerializableDataStruct sds;
+    public List<ASRCsCodeathonProject.SerializableDataStruct> sds_list;
 
     public ListSerializableDataStruct()
     {
@@ -49,13 +49,13 @@ class ListSerializableDataStruct : ISerializable
     }
 
     // Get current index in the list
-    public SerializableDataStruct getCurrentIndexSds(int index)
+    public ASRCsCodeathonProject.SerializableDataStruct getCurrentIndexSds(int index)
     {
         return sds_list[index];
     }
 
     // Add a SerializableDataStruct to the list
-    public void add(SerializableDataStruct in_sds)
+    public void add(ASRCsCodeathonProject.SerializableDataStruct in_sds)
     {
         sds_list.Add(in_sds);
     }
