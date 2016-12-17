@@ -82,6 +82,17 @@ class ListSerializableDataStruct : ISerializable
     {
         // Call each average function...
         double wind_speed = getAvgWS();
+        double cross_wind = getAvgCW();
+        double head_wind = getAvgHW();
+        double temp = getAvgTP();
+        double wind_chill = getAvgWC();
+        double rel_hum = getAvgRH();
+        double heat_index = getAvgHI();
+        double dew_point = getAvgDP();
+        double wet_bulb = getAvgWB();
+        double bar_pre = getAvgBP();
+        double alt = getAvgAL();
+        double den_alt = getAvgDA();
     }
 
     // Calculate average wind speed
@@ -95,6 +106,149 @@ class ListSerializableDataStruct : ISerializable
         }
 
         return (avgWs / sds_list.Count);
+    }
+
+    // Calculate average cross wind
+    public double getAvgCW()
+    {
+        double avgCs = 0;
+
+        for (int i = 0; i < sds_list.Count; i++)
+        {
+            avgCs += sds_list[i].cross_wind;
+        }
+
+        return (avgCs / sds_list.Count);
+    }
+
+    // Calculate average head wind
+    public double getAvgHW()
+    {
+        double avgHw = 0;
+
+        for (int i = 0; i < sds_list.Count; i++)
+        {
+            avgHw += sds_list[i].head_wind;
+        }
+
+        return (avgHw / sds_list.Count);
+    }
+
+    // Calculate average temperature
+    public double getAvgTP()
+    {
+        double avgTp = 0;
+
+        for (int i = 0; i < sds_list.Count; i++)
+        {
+            avgTp += sds_list[i].temp;
+        }
+
+        return (avgTp / sds_list.Count);
+    }
+
+    // Calculate average wind chill
+    public double getAvgWC()
+    {
+        double avgWc = 0;
+
+        for (int i = 0; i < sds_list.Count; i++)
+        {
+            avgWc += sds_list[i].wind_chill;
+        }
+
+        return (avgWc / sds_list.Count);
+    }
+
+    // Calculate average relative humidity
+    public double getAvgRH()
+    {
+        double avgRh = 0;
+
+        for (int i = 0; i < sds_list.Count; i++)
+        {
+            avgRh += sds_list[i].rel_hum;
+        }
+
+        return (avgRh / sds_list.Count);
+    }
+
+    // Calculate average heat index
+    public double getAvgHI()
+    {
+        double avgHi = 0;
+
+        for (int i = 0; i < sds_list.Count; i++)
+        {
+            avgHi += sds_list[i].heat_index;
+        }
+
+        return (avgHi / sds_list.Count);
+    }
+
+    // Calculate average dew point
+    public double getAvgDP()
+    {
+        double avgDp = 0;
+
+        for (int i = 0; i < sds_list.Count; i++)
+        {
+            avgDp += sds_list[i].dew_point;
+        }
+
+        return (avgDp / sds_list.Count);
+    }
+
+    // Calculate average wet bulb
+    public double getAvgWB()
+    {
+        double avgWb = 0;
+
+        for (int i = 0; i < sds_list.Count; i++)
+        {
+            avgWb += sds_list[i].wet_bulb;
+        }
+
+        return (avgWb / sds_list.Count);
+    }
+
+    // Calculate average barometric pressure
+    public double getAvgBP()
+    {
+        double avgBp = 0;
+
+        for (int i = 0; i < sds_list.Count; i++)
+        {
+            avgBp += sds_list[i].bar;
+        }
+
+        return (avgBp / sds_list.Count);
+    }
+
+    // Calculate average altitude
+    public double getAvgAL()
+    {
+        double avgAl = 0;
+
+        for (int i = 0; i < sds_list.Count; i++)
+        {
+            avgAl += sds_list[i].alt;
+        }
+
+        return (avgAl / sds_list.Count);
+    }
+
+    // Calculate average density altitude
+    public double getAvgDA()
+    {
+        double avgDa = 0;
+
+        for (int i = 0; i < sds_list.Count; i++)
+        {
+            avgDa += sds_list[i].den_alt;
+        }
+
+        return (avgDa / sds_list.Count);
     }
 
     public override string ToString()
