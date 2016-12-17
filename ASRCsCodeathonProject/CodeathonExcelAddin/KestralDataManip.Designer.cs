@@ -30,6 +30,8 @@
         {
             this.readData = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.serializeData = new System.Windows.Forms.Button();
+            this.loadSerializedData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // readData
@@ -51,14 +53,35 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
+            // serializeData
+            // 
+            this.serializeData.Location = new System.Drawing.Point(49, 179);
+            this.serializeData.Name = "serializeData";
+            this.serializeData.Size = new System.Drawing.Size(75, 23);
+            this.serializeData.TabIndex = 2;
+            this.serializeData.Text = "button1";
+            this.serializeData.UseVisualStyleBackColor = true;
+            this.serializeData.Click += new System.EventHandler(this.serializeData_Click);
+            // 
+            // loadSerializedData
+            // 
+            this.loadSerializedData.Location = new System.Drawing.Point(49, 235);
+            this.loadSerializedData.Name = "loadSerializedData";
+            this.loadSerializedData.Size = new System.Drawing.Size(75, 23);
+            this.loadSerializedData.TabIndex = 3;
+            this.loadSerializedData.UseVisualStyleBackColor = true;
+            this.loadSerializedData.Click += new System.EventHandler(this.loadSerializedData_Click);
+            // 
             // KestralDataManip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.loadSerializedData);
+            this.Controls.Add(this.serializeData);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.readData);
             this.Name = "KestralDataManip";
-            this.Size = new System.Drawing.Size(133, 476);
+            this.Size = new System.Drawing.Size(239, 476);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -68,5 +91,7 @@
 
         private System.Windows.Forms.Button readData;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button serializeData;
+        private System.Windows.Forms.Button loadSerializedData;
     }
 }
