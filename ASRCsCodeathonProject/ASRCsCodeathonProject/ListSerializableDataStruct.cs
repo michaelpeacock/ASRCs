@@ -101,21 +101,24 @@ namespace ASRCsCodeathonProject
     
 
     // Calculate the averages of each category
-    public void getAverages()
+    public List<double> getAverages()
     {
+        List<double> aves = new List<double>();
         // Call each average function...
-        double wind_speed = getAvgWS();
-        double cross_wind = getAvgCW();
-        double head_wind = getAvgHW();
-        double temp = getAvgTP();
-        double wind_chill = getAvgWC();
-        double rel_hum = getAvgRH();
-        double heat_index = getAvgHI();
-        double dew_point = getAvgDP();
-        double wet_bulb = getAvgWB();
-        double bar_pre = getAvgBP();
-        double alt = getAvgAL();
-        double den_alt = getAvgDA();
+        aves.Add(getAvgWS());
+        aves.Add(getAvgCW());
+        aves.Add(getAvgHW());
+        aves.Add(getAvgTP());
+        aves.Add(getAvgWC());
+        aves.Add(getAvgRH());
+        aves.Add(getAvgHI());
+        aves.Add(getAvgDP());
+        aves.Add(getAvgWB());
+        aves.Add(getAvgBP());
+        aves.Add(getAvgAL());
+        aves.Add(getAvgDA());
+
+        return aves;
     }
 
     // Calculate average wind speed

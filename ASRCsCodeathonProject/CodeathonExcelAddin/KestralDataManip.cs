@@ -189,26 +189,85 @@ namespace CodeathonExcelAddin
                 if (sheet.Name == "Auto Collect")
                     AutoCollectDataSheet = sheet;
             }
+            AutoCollectDataSheet.Range["A1", "M100"].Clear();
             for (int i = 4; i < liveList.dataTypesLabels.Count; i++)
             {
                 AutoCollectDataSheet.Cells[1, i - 3].Value2 = liveList.dataTypesLabels[i];
             }
 
-            for (int i = 2; i < liveList.getCount() + 2; i++)
+            List<double> aves = liveList.getAverages();
+
+            for (int i = 4; i < liveList.dataTypesLabels.Count; i++)
+            {
+                AutoCollectDataSheet.Cells[2, i - 3].Value2 = aves[i-4];
+            }
+
+            for (int i = 4; i < liveList.getCount() + 3; i++)
             {
                 int j = 1;
-                SerializableDataStruct sds = liveList.getSDS(i - 2);
+                SerializableDataStruct sds = liveList.getSDS(i - 3);
+                if (sds.wind_speed > 2.5 * aves[j-1] || (sds.wind_speed+1) * 2.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                else if (sds.wind_speed > 1.5 * aves[j-1] || (sds.wind_speed+1) * 1.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
                 AutoCollectDataSheet.Cells[i, j++].Value2 = sds.wind_speed;
+
+                if (sds.cross_wind > 2.5 * aves[j - 1] || (sds.cross_wind+1) * 2.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                else if (sds.cross_wind > 1.5 * aves[j - 1] || (sds.cross_wind+1) * 1.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
                 AutoCollectDataSheet.Cells[i, j++].Value2 = sds.cross_wind;
+
+                if (sds.head_wind > 2.5 * aves[j - 1] || (sds.head_wind+1) * 2.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                else if (sds.head_wind > 1.5 * aves[j - 1] || (sds.head_wind+1) * 1.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
                 AutoCollectDataSheet.Cells[i, j++].Value2 = sds.head_wind;
+
+                if (sds.temp > 2.5 * aves[j - 1] || sds.temp * 2.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                else if (sds.temp > 1.5 * aves[j - 1] || sds.temp * 1.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
                 AutoCollectDataSheet.Cells[i, j++].Value2 = sds.temp;
+
+                if (sds.wind_chill > 2.5 * aves[j - 1] || sds.wind_chill * 2.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                else if (sds.wind_chill > 1.5 * aves[j - 1] || sds.wind_chill * 1.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
                 AutoCollectDataSheet.Cells[i, j++].Value2 = sds.wind_chill;
+
+                if (sds.rel_hum > 2.5 * aves[j - 1] || sds.rel_hum * 2.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                else if (sds.rel_hum > 1.5 * aves[j - 1] || sds.rel_hum * 1.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
                 AutoCollectDataSheet.Cells[i, j++].Value2 = sds.rel_hum;
+
+                if (sds.heat_index > 2.5 * aves[j - 1] || sds.heat_index * 2.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                else if (sds.heat_index > 1.5 * aves[j - 1] || sds.heat_index * 1.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
                 AutoCollectDataSheet.Cells[i, j++].Value2 = sds.heat_index;
+
+                if (sds.dew_point > 2.5 * aves[j - 1] || sds.dew_point * 2.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                else if (sds.dew_point > 1.5 * aves[j - 1] || sds.dew_point * 1.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
                 AutoCollectDataSheet.Cells[i, j++].Value2 = sds.dew_point;
+
+                if (sds.wet_bulb > 2.5 * aves[j - 1] || sds.wet_bulb * 2.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                else if (sds.wet_bulb > 1.5 * aves[j - 1] || sds.wet_bulb * 1.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
                 AutoCollectDataSheet.Cells[i, j++].Value2 = sds.wet_bulb;
+
+                if (sds.bar > 2.5 * aves[j - 1] || sds.bar * 2.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                else if (sds.bar > 1.5 * aves[j - 1] || sds.bar * 1.5 < aves[j - 1])
+                    AutoCollectDataSheet.Cells[i, j].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
                 AutoCollectDataSheet.Cells[i, j++].Value2 = sds.bar;
+
                 AutoCollectDataSheet.Cells[i, j++].Value2 = sds.alt;
+
                 AutoCollectDataSheet.Cells[i, j++].Value2 = sds.den_alt;
             }
         }
@@ -228,7 +287,7 @@ namespace CodeathonExcelAddin
             else
             {
                 timer.Stop();
-                autocollection.Text = "Start Auto Collecting";
+                autocollection.Text = "Continue Auto Collecting";
                 autoCollecting = false;
             }
         }
