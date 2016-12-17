@@ -40,26 +40,21 @@ namespace CodeathonExcelAddin
             }
 
 
-
+            bool dataOnSheet = false;
             Excel.Range usedRange = active_sheet.UsedRange;
             if (usedRange.Rows.Count > 2 && usedRange.Columns.Count > 2)
+                dataOnSheet = true;
+           
+            if (kestrelTaskPane == null)
             {
-
-                if (kestrelTaskPane == null)
-                {
-                    KestralDataManip krestralDataManip = new KestralDataManip(active_sheet, active_workbook, this);
-                    kestrelTaskPane = Globals.ThisAddIn.CustomTaskPanes.Add(krestralDataManip, "Kestrel Comm Pane");
-                    kestrelTaskPane.DockPosition = Microsoft.Office.Core.MsoCTPDockPosition.msoCTPDockPositionLeft;
-                    kestrelTaskPane.DockPositionRestrict = Microsoft.Office.Core.MsoCTPDockPositionRestrict.msoCTPDockPositionRestrictNoChange;
-                    kestrelTaskPane.Width = 460;
-                }
-
-                kestrelTaskPane.Visible = true;
+                KestralDataManip krestralDataManip = new KestralDataManip(active_sheet, active_workbook, this, dataOnSheet);
+                kestrelTaskPane = Globals.ThisAddIn.CustomTaskPanes.Add(krestralDataManip, "Kestrel Panel");
+                kestrelTaskPane.DockPosition = Microsoft.Office.Core.MsoCTPDockPosition.msoCTPDockPositionLeft;
+                kestrelTaskPane.DockPositionRestrict = Microsoft.Office.Core.MsoCTPDockPositionRestrict.msoCTPDockPositionRestrictNoChange;
+                kestrelTaskPane.Width = 250;
             }
-            else
-            {
-                System.Windows.Forms.MessageBox.Show("There must be data on spread sheet to open the form. \n If you are going to build a forest this data will be used to build the forest \n Other wise the loaded data will be run down a forest once one is loaded");
-            }
+
+            kestrelTaskPane.Visible = true;
         }
 
         public void closePane()

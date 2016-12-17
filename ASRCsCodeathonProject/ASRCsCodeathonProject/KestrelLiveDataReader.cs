@@ -18,6 +18,7 @@ namespace ASRCsCodeathonProject
     {
         ListSerializableDataStruct lsds;
         WindowHandlerManager whm;
+        private Timer timer;
 
         public KestrelLiveDataReader()
         {
@@ -26,9 +27,23 @@ namespace ASRCsCodeathonProject
             InitializeComponent();
         }
 
-        private void addLiveDataToList_Click(object sender, EventArgs e)
+        
+        public void InitTimer()
+        {
+            timer = new Timer();
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Interval = 5000; // in miliseconds
+            timer.Start();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
         {
             lsds.add(whm.getKestrelAppData());
+        }
+
+        private void addLiveDataToList_Click(object sender, EventArgs e)
+        {
+            InitTimer();
         }
 
         private void serializeData_Click(object sender, EventArgs e)

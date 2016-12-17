@@ -15,18 +15,20 @@ namespace ASRCsCodeathonProject
     {
         public ASRCsCodeathonProject.SerializableDataStruct sds;
         public List<ASRCsCodeathonProject.SerializableDataStruct> sds_list;
-        public List<string> dataTypes;
+        public List<string> dataTypesLabels;
 
         public ListSerializableDataStruct()
         {
             sds_list = new List<ASRCsCodeathonProject.SerializableDataStruct>();
+            setupDataTypeLabels();
         }
 
         // The special constructor is used to deserialize values.
         public ListSerializableDataStruct(SerializationInfo info, StreamingContext context)
         {
             sds_list = (List<SerializableDataStruct>)info.GetValue("sds_list", typeof(List<SerializableDataStruct>));
-            //dataTypes = (List<string>)info.GetValue("dataTypes", typeof(List<string>));
+            setupDataTypeLabels();
+            
         }
 
         // Implement this method to serialize data. The method is called 
@@ -35,9 +37,29 @@ namespace ASRCsCodeathonProject
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("sds_list", sds_list);
-            info.AddValue("dataTypes", dataTypes);
+            
         }
 
+        private void setupDataTypeLabels()
+        {
+            dataTypesLabels = new List<string>();
+            dataTypesLabels.Add("Date-Time");
+            dataTypesLabels.Add("Seconds");
+            dataTypesLabels.Add("MAG Comp");
+            dataTypesLabels.Add("true Comp");
+            dataTypesLabels.Add("Windspeed");
+            dataTypesLabels.Add("Crosswind");
+            dataTypesLabels.Add("headwind");
+            dataTypesLabels.Add("temp");
+            dataTypesLabels.Add("wind chill");
+            dataTypesLabels.Add("rel hum");
+            dataTypesLabels.Add("heat index");
+            dataTypesLabels.Add("dew point");
+            dataTypesLabels.Add("wet bulb");
+            dataTypesLabels.Add("pressure");
+            dataTypesLabels.Add("altitude");
+            dataTypesLabels.Add("den alt");
+        }
 
         // Get the size of the list
         public int getCount()
@@ -74,7 +96,7 @@ namespace ASRCsCodeathonProject
 
         public void setTypeList(List<string> in_typesList)
         {
-            dataTypes = in_typesList;
+            dataTypesLabels = in_typesList;
         }
     
 

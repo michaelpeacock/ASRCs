@@ -8,7 +8,7 @@ using System.Collections;
 
 namespace ASRCsCodeathonProject
 {
-    class WindowHandlerManager
+    public class WindowHandlerManager
     {
         public WindowHandlerManager()
         {
