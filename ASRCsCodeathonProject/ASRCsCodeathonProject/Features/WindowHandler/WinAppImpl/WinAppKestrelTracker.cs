@@ -48,8 +48,6 @@ namespace ASRCsCodeathonProject.Features.WindowHandler.WinAppImpl
                 Console.WriteLine(dataSet[i]);
             }
 
-            Console.WriteLine("TEMP="+getDataForProperty(dataSet, "TEMP"));
-
             //Console.WriteLine(kestrelWindowData.ToString());
             Console.ReadKey();
 
