@@ -15,3 +15,4 @@ C:\Users\ScottM\Desktop\codeathon\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProj
 C:\Users\ScottM\Desktop\codeathon\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\obj\Debug\ASRCsCodeathonProject.csproj.GenerateResource.Cache
 C:\Users\ScottM\Desktop\codeathon\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\obj\Debug\ASRCsCodeathonProject.exe
 C:\Users\ScottM\Desktop\codeathon\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\obj\Debug\ASRCsCodeathonProject.pdb
+C:\Users\ScottM\Desktop\codeathon\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\obj\Debug\ASRCsCodeathonProject.csprojResolveAssemblyReference.cache
