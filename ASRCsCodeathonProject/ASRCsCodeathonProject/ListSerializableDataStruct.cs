@@ -253,6 +253,11 @@ class ListSerializableDataStruct : ISerializable
 
     public override string ToString()
     {
-        return "Data Set: " + sds.ToString();
+        string dataset = "";
+        for (int i = 0; i < sds_list.Count(); i++)
+        {
+            dataset += sds_list[i].ToString() + "\n";
+        }
+        return "Data Set:" + dataset;
     }
 }
