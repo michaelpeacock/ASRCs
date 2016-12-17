@@ -33,6 +33,8 @@
             this.loadSerializedData = new System.Windows.Forms.Button();
             this.mergeDataSets = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.autocollection = new System.Windows.Forms.Button();
+            this.saveAutoCollect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // readData
@@ -85,10 +87,32 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.mergeAnotherLoadedSet_Click);
             // 
+            // autocollection
+            // 
+            this.autocollection.Location = new System.Drawing.Point(20, 229);
+            this.autocollection.Name = "autocollection";
+            this.autocollection.Size = new System.Drawing.Size(179, 35);
+            this.autocollection.TabIndex = 9;
+            this.autocollection.Text = "Start Auto Collection";
+            this.autocollection.UseVisualStyleBackColor = true;
+            this.autocollection.Click += new System.EventHandler(this.autocollection_Click);
+            // 
+            // saveAutoCollect
+            // 
+            this.saveAutoCollect.Location = new System.Drawing.Point(20, 270);
+            this.saveAutoCollect.Name = "saveAutoCollect";
+            this.saveAutoCollect.Size = new System.Drawing.Size(179, 36);
+            this.saveAutoCollect.TabIndex = 10;
+            this.saveAutoCollect.Text = "Save Auto Collected Data";
+            this.saveAutoCollect.UseVisualStyleBackColor = true;
+            this.saveAutoCollect.Click += new System.EventHandler(this.saveAutoCollect_Click);
+            // 
             // KestralDataManip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.saveAutoCollect);
+            this.Controls.Add(this.autocollection);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.mergeDataSets);
             this.Controls.Add(this.loadSerializedData);
@@ -107,5 +131,7 @@
         private System.Windows.Forms.Button loadSerializedData;
         private System.Windows.Forms.Button mergeDataSets;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button autocollection;
+        private System.Windows.Forms.Button saveAutoCollect;
     }
 }
