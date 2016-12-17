@@ -130,7 +130,7 @@ namespace ASRCsCodeathonProject
             //string value = date + " " + time;
 
             return "Date Time: " + this.date_time + ", Magnetic Direction: " + this.mag_dir + ", True Direction: " + this.true_dir 
-                    + ", Wind Speed: " + this.wind_speed + ", Cross Wind: " + this.cross_wind + ", Head Wind: " + this.head_wind + ", Temperature: "
+                    + ", Wind Speed: " + this.wind_speed + ", Cross Wind: " + this.cross_wind + ", Head Wind: " + this.head_wind + ", Temperature: " + this.temp
                     + ", Wind Chill: " + this.wind_chill + ", Relative Humidity: " + this.rel_hum + ", Heat Index: " + this.heat_index + ", Dew Point: "
                     + ", Wet Bulb: " + this.wet_bulb + ", Barometric Pressure: " + this.bar + ", Altitude: " + this.alt + ", Density Altitude: " + this.den_alt;
         }
