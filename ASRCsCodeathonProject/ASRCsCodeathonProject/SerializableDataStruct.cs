@@ -79,13 +79,25 @@ namespace ASRCsCodeathonProject
         public SerializableDataStruct() { }
 
 
-        // The value to serialize.
-        private string myProperty_value;
-
-        public string MyProperty
+        // The special constructor is used to deserialize values.
+        public SerializableDataStruct(SerializationInfo info, StreamingContext context)
         {
-            get { return myProperty_value; }
-            set { myProperty_value = value; }
+            date_time = (DateTime)info.GetValue("date_time", typeof(DateTime));
+            time_seconds = (double)info.GetValue("time_seconds", typeof(double));
+            mag_dir = (string)info.GetValue("mag_dir", typeof(string));
+            true_dir = (string)info.GetValue("true_dir", typeof(string));
+            wind_speed = (double)info.GetValue("wind_speed", typeof(double));
+            cross_wind = (double)info.GetValue("cross_wind", typeof(double));
+            head_wind = (double)info.GetValue("head_wind", typeof(double));
+            temp = (double)info.GetValue("temp", typeof(double));
+            wind_chill = (double)info.GetValue("wind_chill", typeof(double));
+            rel_hum = (double)info.GetValue("rel_hum", typeof(double));
+            heat_index = (double)info.GetValue("heat_index", typeof(double));
+            dew_point = (double)info.GetValue("dew_point", typeof(double));
+            wet_bulb = (double)info.GetValue("wet_bulb", typeof(double));
+            bar = (double)info.GetValue("bar", typeof(double));
+            alt = (double)info.GetValue("alt", typeof(double));
+            den_alt = (double)info.GetValue("den_alt", typeof(double));
         }
 
         // Implement this method to serialize data. The method is called 
@@ -94,6 +106,7 @@ namespace ASRCsCodeathonProject
         {
             // Use the AddValue method to specify serialized values.
             info.AddValue("date_time", date_time);
+            info.AddValue("time_seconds", time_seconds);
             info.AddValue("mag_dir", mag_dir);
             info.AddValue("true_dir", true_dir);
             info.AddValue("wind_speed", wind_speed);
@@ -110,19 +123,14 @@ namespace ASRCsCodeathonProject
             info.AddValue("den_alt", den_alt);
         }
 
-        // The special constructor is used to deserialize values.
-        public SerializableDataStruct(SerializationInfo info, StreamingContext context)
-        {
-            // Reset the property value using the GetValue method.
-            myProperty_value = (string)info.GetValue("props", typeof(string));
-        }
+        
 
         public override string ToString()
         {
             //string value = date + " " + time;
 
             return "Date Time: " + this.date_time + ", Magnetic Direction: " + this.mag_dir + ", True Direction: " + this.true_dir 
-                    + ", Wind Speed: " + this.wind_speed + ", Cross Wind: " + this.cross_wind + ", Head Wind: " + this.head_wind + ", Temperature: "
+                    + ", Wind Speed: " + this.wind_speed + ", Cross Wind: " + this.cross_wind + ", Head Wind: " + this.head_wind + ", Temperature: " + this.temp
                     + ", Wind Chill: " + this.wind_chill + ", Relative Humidity: " + this.rel_hum + ", Heat Index: " + this.heat_index + ", Dew Point: "
                     + ", Wet Bulb: " + this.wet_bulb + ", Barometric Pressure: " + this.bar + ", Altitude: " + this.alt + ", Density Altitude: " + this.den_alt;
         }

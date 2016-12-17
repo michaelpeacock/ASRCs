@@ -13,9 +13,9 @@ namespace CodeathonExcelAddin
 {
     public static class ProcessExcelData
     {
-        public static List<SerializableDataStruct> getDataSet(Excel.Range used_range, Excel.Workbook workbook)
+        public static ListSerializableDataStruct getDataSet(Excel.Range used_range, Excel.Workbook workbook)
         {
-            List<SerializableDataStruct> DataSet = new List<SerializableDataStruct>();
+            ListSerializableDataStruct DataSet = new ListSerializableDataStruct();
             int maxRow = used_range.Rows.Count;
             int maxColumn = used_range.Columns.Count;
 
@@ -119,7 +119,7 @@ namespace CodeathonExcelAddin
                             newRecord.den_alt = da;
                         }
                     }
-                    DataSet.Add(newRecord);
+                    DataSet.add(newRecord);
                 }
             }
             return DataSet;
