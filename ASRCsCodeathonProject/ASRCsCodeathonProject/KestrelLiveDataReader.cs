@@ -29,7 +29,6 @@ namespace ASRCsCodeathonProject
         private void addLiveDataToList_Click(object sender, EventArgs e)
         {
             lsds.add(whm.getKestrelAppData());
-            label1.Text = ""+lsds.getCount();
         }
 
         private void serializeData_Click(object sender, EventArgs e)
