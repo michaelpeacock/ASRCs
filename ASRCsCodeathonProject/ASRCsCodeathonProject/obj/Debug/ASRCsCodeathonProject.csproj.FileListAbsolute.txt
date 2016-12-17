@@ -6,3 +6,4 @@ C:\Users\Masa\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\bin\Debug\ASRCsC
 C:\Users\Masa\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\obj\Debug\ASRCsCodeathonProject.Form1.resources
 C:\Users\Masa\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\obj\Debug\ASRCsCodeathonProject.exe
 C:\Users\Masa\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\obj\Debug\ASRCsCodeathonProject.pdb
+C:\Users\Masa\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\obj\Debug\ASRCsCodeathonProject.csprojResolveAssemblyReference.cache
