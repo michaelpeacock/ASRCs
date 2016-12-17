@@ -35,6 +35,7 @@
             this.createGrpahs = new System.Windows.Forms.Button();
             this.compareDataSets = new System.Windows.Forms.Button();
             this.mergeDataSets = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // readData
@@ -49,7 +50,6 @@
             // 
             // serializeData
             // 
-            this.serializeData.Enabled = false;
             this.serializeData.Location = new System.Drawing.Point(20, 64);
             this.serializeData.Name = "serializeData";
             this.serializeData.Size = new System.Drawing.Size(179, 35);
@@ -100,18 +100,28 @@
             // 
             // mergeDataSets
             // 
-            this.mergeDataSets.Enabled = false;
             this.mergeDataSets.Location = new System.Drawing.Point(20, 271);
             this.mergeDataSets.Name = "mergeDataSets";
             this.mergeDataSets.Size = new System.Drawing.Size(179, 35);
             this.mergeDataSets.TabIndex = 7;
             this.mergeDataSets.Text = "Merge Data Sets";
             this.mergeDataSets.UseVisualStyleBackColor = true;
+            this.mergeDataSets.Click += new System.EventHandler(this.mergeDataSets_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(75, 349);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "label1";
             // 
             // KestralDataManip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.mergeDataSets);
             this.Controls.Add(this.compareDataSets);
             this.Controls.Add(this.createGrpahs);
@@ -119,10 +129,10 @@
             this.Controls.Add(this.loadSerializedData);
             this.Controls.Add(this.serializeData);
             this.Controls.Add(this.readData);
-            this.Enabled = false;
             this.Name = "KestralDataManip";
             this.Size = new System.Drawing.Size(223, 476);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -135,5 +145,6 @@
         private System.Windows.Forms.Button createGrpahs;
         private System.Windows.Forms.Button compareDataSets;
         private System.Windows.Forms.Button mergeDataSets;
+        private System.Windows.Forms.Label label1;
     }
 }

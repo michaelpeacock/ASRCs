@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-using ASRCsCodeathonProject.Features.WindowHandler.WinAppImpl;
+using ASRCsCodeathonProject;
 using System.Collections;
 
-namespace ASRCsCodeathonProject.Features.WindowHandler
+namespace ASRCsCodeathonProject
 {
     class WindowHandlerManager
     {
@@ -39,9 +39,5 @@ namespace ASRCsCodeathonProject.Features.WindowHandler
             return dataResult;
         }
 
-        public static void Main()
-        {
-            new WindowHandlerManager();
-        }
     }
 }

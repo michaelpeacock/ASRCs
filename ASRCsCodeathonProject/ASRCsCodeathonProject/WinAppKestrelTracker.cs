@@ -1,4 +1,4 @@
-﻿using ASRCsCodeathonProject.Features.WindowHandler.Interfaces;
+﻿using ASRCsCodeathonProject;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ASRCsCodeathonProject.Features.WindowHandler.WinAppImpl
+namespace ASRCsCodeathonProject
 {
     class WinAppKestrelTracker : WinApp_A
     {

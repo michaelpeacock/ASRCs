@@ -21,16 +21,6 @@ namespace ASRCsCodeathonProject
             sds_list = new List<ASRCsCodeathonProject.SerializableDataStruct>();
         }
 
-        // The value to serialize.
-        private string myProperty_value;
-
-        public string MyProperty
-        {
-            get { return myProperty_value; }
-            set { myProperty_value = value; }
-        }
-
-
         // The special constructor is used to deserialize values.
         public ListSerializableDataStruct(SerializationInfo info, StreamingContext context)
         {
@@ -68,19 +58,15 @@ namespace ASRCsCodeathonProject
         // Add a new list to the current list, ignoring duplicate entries
         public void addList(ListSerializableDataStruct in_lsds)
         {
-            ListSerializableDataStruct temp = in_lsds;
-            // Go through base list
-            for (int i = 0; i < sds_list.Count; i++)
+            for (int i = 0; i < in_lsds.getCount(); i++ )
             {
-                // Go through input list
-                for (int j = 0; j < in_lsds.getCount(); j++)
-                {
-                    if (!(sds_list[i].Equals(in_lsds.getCurrentIndexSds(j))))
-                    {
-                        sds_list.Add(in_lsds.getCurrentIndexSds(j));
-                    }
-                }
+                sds_list.Add(in_lsds.getSDS(i));
             }
+        }
+
+        public SerializableDataStruct getSDS(int index)
+        {
+            return sds_list[index];
         }
     
 
