@@ -1,0 +1,8 @@
+C:\Users\Masa\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\obj\Debug\ASRCsCodeathonProject.Properties.Resources.resources
+C:\Users\Masa\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\obj\Debug\ASRCsCodeathonProject.csproj.GenerateResource.Cache
+C:\Users\Masa\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\bin\Debug\ASRCsCodeathonProject.exe.config
+C:\Users\Masa\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\bin\Debug\ASRCsCodeathonProject.exe
+C:\Users\Masa\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\bin\Debug\ASRCsCodeathonProject.pdb
+C:\Users\Masa\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\obj\Debug\ASRCsCodeathonProject.Form1.resources
+C:\Users\Masa\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\obj\Debug\ASRCsCodeathonProject.exe
+C:\Users\Masa\ASRCs\ASRCsCodeathonProject\ASRCsCodeathonProject\obj\Debug\ASRCsCodeathonProject.pdb
