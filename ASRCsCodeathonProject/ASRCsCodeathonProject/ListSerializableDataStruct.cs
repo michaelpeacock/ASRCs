@@ -82,7 +82,7 @@ namespace ASRCsCodeathonProject
                 }
             }
         }
-    }
+    
 
     // Calculate the averages of each category
     public void getAverages()
@@ -115,24 +115,21 @@ namespace ASRCsCodeathonProject
             return (avgWs / sds_list.Count);
         }
 
-        public override string ToString()
-        {
-            return "Data Set: " + sds.ToString();
-        }
-    }
+   
+    
 
-}
+
     // Calculate average cross wind
     public double getAvgCW()
     {
-        double avgCs = 0;
+        double avgCw = 0;
 
         for (int i = 0; i < sds_list.Count; i++)
         {
-            avgCs += sds_list[i].cross_wind;
+            avgCw += sds_list[i].cross_wind;
         }
 
-        return (avgCs / sds_list.Count);
+        return (avgCw / sds_list.Count);
     }
 
     // Calculate average head wind
@@ -274,4 +271,5 @@ namespace ASRCsCodeathonProject
         }
         return "Data Set:" + dataset;
     }
+}
 }
