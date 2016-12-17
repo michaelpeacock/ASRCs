@@ -157,6 +157,12 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="KestralDataManip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KestralDataManip.Designer.cs">
+      <DependentUpon>KestralDataManip.cs</DependentUpon>
+    </Compile>
     <Compile Include="KestrelDataAddInRibbon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="KestralDataManip.resx">
+      <DependentUpon>KestralDataManip.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KestrelDataAddInRibbon.resx">
       <DependentUpon>KestrelDataAddInRibbon.cs</DependentUpon>
     </EmbeddedResource>

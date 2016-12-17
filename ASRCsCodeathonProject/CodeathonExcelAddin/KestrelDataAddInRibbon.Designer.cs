@@ -60,6 +60,7 @@
             this.openManForm.Label = " Data Model";
             this.openManForm.Name = "openManForm";
             this.openManForm.ShowImage = true;
+            this.openManForm.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.openManForm_Click);
             // 
             // KestrelDataAddInRibbon
             // 
